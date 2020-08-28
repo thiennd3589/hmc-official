@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/hmc-official/static/css/main.5dc833ce.chunk.css",
+    "main.js": "/hmc-official/static/js/main.ca548c9c.chunk.js",
+    "main.js.map": "/hmc-official/static/js/main.ca548c9c.chunk.js.map",
+    "runtime-main.js": "/hmc-official/static/js/runtime-main.b9891deb.js",
+    "runtime-main.js.map": "/hmc-official/static/js/runtime-main.b9891deb.js.map",
+    "static/js/2.12c4a0af.chunk.js": "/hmc-official/static/js/2.12c4a0af.chunk.js",
+    "static/js/2.12c4a0af.chunk.js.map": "/hmc-official/static/js/2.12c4a0af.chunk.js.map",
+    "index.html": "/hmc-official/index.html",
+    "precache-manifest.5a4ed6bf928c00fc26ff0750299a3360.js": "/hmc-official/precache-manifest.5a4ed6bf928c00fc26ff0750299a3360.js",
+    "service-worker.js": "/hmc-official/service-worker.js",
+    "static/css/main.5dc833ce.chunk.css.map": "/hmc-official/static/css/main.5dc833ce.chunk.css.map",
+    "static/js/2.12c4a0af.chunk.js.LICENSE.txt": "/hmc-official/static/js/2.12c4a0af.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "/hmc-official/static/media/HMCWeb_BG_White.0051f786.jpg",
+    "static/media/HMCWeb_Icon_01.png": "/hmc-official/static/media/HMCWeb_Icon_01.37ccb4c7.png",
+    "static/media/HMCWeb_Icon_02.png": "/hmc-official/static/media/HMCWeb_Icon_02.f650b89c.png",
+    "static/media/HMCWeb_Icon_03.png": "/hmc-official/static/media/HMCWeb_Icon_03.562f11e5.png",
+    "static/media/img1.jpg": "/hmc-official/static/media/img1.b8b5036e.jpg",
+    "static/media/img2.jpg": "/hmc-official/static/media/img2.8e00852c.jpg",
+    "static/media/img3.jpg": "/hmc-official/static/media/img3.dbd6022f.jpg",
+    "static/media/img4.jpg": "/hmc-official/static/media/img4.69381285.jpg",
+    "static/media/logo.png": "/hmc-official/static/media/logo.796728c3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9891deb.js",
+    "static/js/2.12c4a0af.chunk.js",
+    "static/css/main.5dc833ce.chunk.css",
+    "static/js/main.ca548c9c.chunk.js"
+  ]
+}
