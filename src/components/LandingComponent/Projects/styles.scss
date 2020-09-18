@@ -1,0 +1,96 @@
+.ProjectsContainer {
+  width: 100%;
+  top: -30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: url("../../../assets//Background/HMCWeb_BG_White.jpg");
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  .CustomDivider {
+    position: unset;
+  }
+  .Session {
+    color: #c42f3b;
+    margin: 20px auto;
+    h2 {
+      font-weight: bold;
+      font-size: 32pt;
+      margin: 0;
+    }
+  }
+  .Projects {
+    display: flex;
+    padding-bottom: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    cursor: grab;
+
+    button {
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      padding: 5px;
+      position: absolute;
+      background: #c42f3b;
+      border: none;
+      border-radius: 5px;
+      z-index: 30;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      opacity: 0.5;
+      transition: opacity 0.1s ease-in-out;
+      &:hover {
+        opacity: 0.9;
+      }
+      &:focus {
+        outline: none;
+      }
+      &.left-arrow {
+        left: 50px;
+      }
+
+      &.right-arrow {
+        right: 20px;
+      }
+    }
+  }
+}
+
+.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #c42f3b;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #c42f3b;
+}

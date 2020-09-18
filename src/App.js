@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
+import Admin from './pages/Admin';
+import Landing from './pages/Landing'
 import './App.css';
 
 function App() {
+  function detectMob() {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+    });
+  }
+
+  const setMinWidth = () => {
+    return !detectMob() ? { minWidth: `${Math.floor(1200 / window.devicePixelRatio)}px` } : {}
+  }
+
+  console.log(detectMob(), setMinWidth())
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App`} style={setMinWidth()} >
+      <Switch>
+        <Route exact path='/' render={() => <Landing style={setMinWidth()} />} />
+        <Route path='/officialadmin' component={Admin} />
+      </Switch>
     </div>
   );
 }

@@ -1,0 +1,45 @@
+.AdminCard {
+  background: url("../../../../assets//Background/HMCWeb_BG_White.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 17px;
+  .CardContent {
+    margin: 20px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    .avatar {
+      img {
+        width: 280px;
+        height: auto;
+        border-radius: 17px;
+      }
+    }
+    .info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin-bottom: 0;
+        color: #c42f3b;
+      }
+
+      .main {
+        margin-top: 20px;
+        .position {
+          font-size: 15pt;
+        }
+
+        .name {
+          font-weight: bold;
+          font-size: 22pt;
+        }
+      }
+      .sub {
+        font-size: 15pt;
+      }
+    }
+  }
+}

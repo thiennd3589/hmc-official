@@ -1,0 +1,51 @@
+.Contact {
+  width: 100%;
+  top: -75px;
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #c42f3b;
+
+  .CustomDivider {
+    position: unset;
+  }
+  .Session {
+    margin: 20px auto;
+    h2 {
+      font-weight: bold;
+      font-size: 32pt;
+      margin: 0;
+    }
+  }
+  .Register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 24pt;
+    }
+
+    button {
+      width: 300px;
+      font-size: 40pt;
+      border-radius: 20px;
+      border: none;
+      background: #c42f3b;
+      font-weight: bold;
+      color: #fff;
+
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        transform: scale(1.01);
+      }
+    }
+  }
+}

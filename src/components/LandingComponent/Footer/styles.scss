@@ -1,0 +1,53 @@
+.Footer {
+  background: url("../../../assets/Background/HMCWeb_BG_Red.jpg");
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  .Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .slogan {
+      color: #fff;
+      font-size: 25pt;
+      font-weight: bold;
+    }
+    .sub {
+      font-size: 15px;
+      font-style: italic;
+      color: #fff;
+    }
+  }
+  .logo {
+    margin-right: 70px;
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+}
+
+.Detail {
+  font-size: 16pt;
+  color: #fff;
+  display: flex;
+  height: 50px;
+
+  i {
+    font-size: 18pt;
+    position: relative;
+    top: 3px;
+  }
+
+  .information {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Footer {
+    .logo {
+      display: none;
+    }
+  }
+}

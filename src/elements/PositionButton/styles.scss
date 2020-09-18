@@ -1,0 +1,58 @@
+.PositionButton {
+  position: relative;
+  cursor: pointer;
+  border-bottom-right-radius: 25px;
+  min-width: 17.5vw;
+
+  .Positions {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 0 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-bottom-right-radius: 25px;
+    width: 100%;
+    .Position {
+      height: 45px;
+      font-size: 18pt;
+      border: none;
+      color: rgb(196, 47, 59);
+      padding-left: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &.selected {
+        background: rgb(196, 47, 59) !important;
+        color: #fff;
+      }
+
+      span {
+        margin-left: 15px;
+      }
+
+      &:nth-child(odd) {
+        background: rgba(196, 47, 59, 0.1);
+      }
+    }
+  }
+
+  .ButtonContent {
+    height: 45px;
+    font-size: 18pt;
+    padding-left: 15px;
+    border-bottom-right-radius: 25px;
+    background: #fff;
+    color: rgb(196, 47, 59);
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 15px;
+    }
+  }
+
+  .close {
+    color: rgb(196, 47, 59);
+  }
+}

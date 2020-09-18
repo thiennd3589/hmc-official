@@ -1,0 +1,43 @@
+.ToggleButton {
+  position: relative;
+  cursor: pointer;
+
+  .CustomCheckboxes {
+    position: absolute;
+    bottom: 0;
+  }
+
+  label {
+    font-size: 20pt;
+    color: #fff;
+  }
+
+  .ButtonContent {
+    height: 45px;
+    font-size: 18pt;
+    padding-left: 15px;
+    border-bottom-right-radius: 25px;
+    background: #fff;
+    color: rgb(196, 47, 59);
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 15px;
+    }
+  }
+
+  input {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgba(196, 47, 59, 0.7);
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+}

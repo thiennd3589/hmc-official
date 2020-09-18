@@ -1,0 +1,16 @@
+.Cell {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+
+  > div {
+    display: flex;
+    flex: 1;
+    &.label {
+      justify-content: flex-start;
+    }
+    &.value {
+      justify-content: flex-end;
+    }
+  }
+}

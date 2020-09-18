@@ -1,0 +1,89 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 20pt;
+    color: #fff;
+  }
+
+  textarea {
+    font-size: 18pt;
+    padding-left: 15px;
+    border: none;
+    border-bottom-right-radius: 25px;
+    color: rgb(196, 47, 59) !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgba(196, 47, 59, 0.7);
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+
+  input {
+    height: 70px;
+    font-size: 18pt;
+    padding-left: 15px;
+    border: none;
+    border-bottom-right-radius: 25px;
+    color: rgb(196, 47, 59) !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::selection {
+      color: rgb(196, 47, 59) !important;
+    }
+
+    &::placeholder {
+      color: rgba(196, 47, 59, 0.7);
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    position: relative;
+    left: 500px;
+    z-index: 100;
+  }
+}
+
+@media only screen and (max-height: 766px) {
+  .Input {
+    label {
+      font-size: 14pt;
+    }
+
+    textarea {
+      font-size: 13pt;
+      padding-left: 11px;
+      border-bottom-right-radius: 18px;
+    }
+
+    input {
+      height: 40px;
+      font-size: 13pt;
+      padding-left: 11px;
+      border-bottom-right-radius: 28px;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      position: relative;
+      left: 500px;
+      z-index: 100;
+    }
+  }
+}
