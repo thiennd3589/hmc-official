@@ -46,7 +46,8 @@ const Input = ({ label, name, placeholder, type, onChange, required }) => {
           }}
         />
       )}
-      {showAlert && <Alert variant="danger">Bạn chưa điền mục này!!!</Alert>}
+      {showAlert && <Alert variant="danger">Bạn chưa điền mục này!!!
+        </Alert>}
     </div>
   );
 };
