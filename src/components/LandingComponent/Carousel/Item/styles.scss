@@ -10,6 +10,7 @@
     background: #000;
     display: flex;
     align-items: center;
+    justify-content: center;
     filter: blur(0px);
     animation: blurBackground 0.3s ease-in-out 0.5s;
     animation-fill-mode: forwards;
@@ -534,11 +535,11 @@
 }
 
 ////
-// .Resize {
-//   .background {
-//     img {
-//       height: 100%;
-//       width: auto;
-//     }
-//   }
-// }
+.Resize {
+  .background {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

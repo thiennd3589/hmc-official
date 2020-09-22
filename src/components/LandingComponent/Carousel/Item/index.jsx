@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles.scss";
 import { useEffect } from "react";
+import "./styles.scss";
 
 const Item = (props) => {
   let thisItem = null;
@@ -9,10 +9,12 @@ const Item = (props) => {
     thisItem.classList.add(`${props.id}-transition`);
   }, []);
 
+  const isHD = window.innerWidth / window.innerHeight >= 1920 / 1080;
+
   return (
     <div
       className={`CarouselItem ${props.image ? "" : "non-image"} ${
-        props.isHD ? "" : "Resize"
+        isHD ? "" : "Resize"
       }`}
       id={props.id}
     >
