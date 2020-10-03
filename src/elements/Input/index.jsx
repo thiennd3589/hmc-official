@@ -1,24 +1,17 @@
-import React, { useState, useRef } from "react";
-import { Alert } from "../../components/Bootstrap";
+import React, { useRef } from "react";
+import { useState } from "react";
 import "./styles.scss";
 
-const Input = ({ label, name, placeholder, type, onChange, required }) => {
+const Input = ({ label, name, placeholder, type, onChange, value }) => {
   const ref = useRef({
     value: "",
   });
 
-  const [showAlert, setShowAlert] = useState(false);
+  const [, redraw] = useState();
 
   const onCurrentInputChange = (event) => {
     ref.current.value = event.currentTarget.value.trim();
-  };
-
-  const handleShowAlert = () => {
-    setShowAlert(true);
-  };
-
-  const handleHideAlert = () => {
-    setShowAlert(false);
+    redraw({});
   };
 
   return (
@@ -27,9 +20,13 @@ const Input = ({ label, name, placeholder, type, onChange, required }) => {
       {type === "textarea" ? (
         <textarea
           name={name}
-          onChange={onChange}
+          onChange={(event) => {
+            onCurrentInputChange(event);
+            onChange(event);
+          }}
           placeholder={placeholder}
           rows={4}
+          value={value ? value : ref.current.value}
         ></textarea>
       ) : (
         <input
@@ -40,14 +37,9 @@ const Input = ({ label, name, placeholder, type, onChange, required }) => {
             onCurrentInputChange(event);
             onChange(event);
           }}
-          onFocus={handleHideAlert}
-          onBlur={() => {
-            if (required && ref.current.value === "") handleShowAlert();
-          }}
+          value={value ? value : ref.current.value}
         />
       )}
-      {showAlert && <Alert variant="danger">Bạn chưa điền mục này!!!
-        </Alert>}
     </div>
   );
 };

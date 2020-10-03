@@ -1,0 +1,84 @@
+.MenuBar {
+  position: fixed;
+  right: 100%;
+  color: #fff;
+  z-index: 1000;
+  width: 50%;
+  height: 100%;
+  transition: right 0.3s ease-out;
+
+  &.ShowMenu {
+    right: 50%;
+  }
+
+  .MenuContainer {
+    position: relative;
+    height: 100%;
+
+    .ToggleButton {
+      position: absolute;
+      width: 50px;
+      left: 100%;
+      margin-left: 20px;
+      top: 20px;
+      z-index: 1000;
+      transition: opacity 0.3s ease-out;
+
+      &.ShowMenu {
+        opacity: 0;
+      }
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    .MobileMenu {
+      position: relative;
+      right: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: url("../../../assets/Background/HMCWeb_BG_Red.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      transition: right 0.3s ease-out;
+
+      &.ShowMenu {
+        right: 0;
+      }
+
+      .Content {
+        .title {
+          width: 160px;
+          margin-bottom: 20px;
+          h3 {
+            font-size: 2.3rem;
+            font-weight: 900;
+          }
+        }
+
+        .MenuItems {
+          display: flex;
+          flex-direction: column;
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 10px 0;
+          }
+        }
+      }
+      .logo {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

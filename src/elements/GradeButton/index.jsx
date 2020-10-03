@@ -27,9 +27,9 @@ const GRADE_OPTIONS = [
   },
 ];
 
-const GradeButton = ({ handleRadioSelect, onChange }) => {
+const GradeButton = ({ handleRadioSelect, onChange, value }) => {
   const [visibleCheckbox, setVisibleCheckbox] = useState(false);
-  const [placeholder, setPlaceholder] = useState("Lựa chọn");
+  const [placeholder, setPlaceholder] = useState(value ? value : "Lựa chọn");
   const showCheckbox = () => {
     !visibleCheckbox && setVisibleCheckbox(true);
   };
@@ -42,7 +42,7 @@ const GradeButton = ({ handleRadioSelect, onChange }) => {
   };
 
   return (
-    <div className="ToggleButton" onClick={showCheckbox}>
+    <div className="GradeButton" onClick={showCheckbox}>
       <label>5. Bạn là sinh viên khóa?*</label>
       {!visibleCheckbox && (
         <div className="ButtonContent">

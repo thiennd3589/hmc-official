@@ -24,36 +24,38 @@ const CarouselComp = () => {
   });
 
   return (
-    <Carousel pause={false}>
-      <Carousel.Item>
-        <Item
-          background={img1}
-          title="ABOUT US"
-          describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
-          image={logo}
-          id="about-us"
-          isHD={isHD}
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Item
-          background={img2}
-          title="ATTRIBUTE"
-          describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
-          id="attribute"
-          isHD={isHD}
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Item
-          background={img3}
-          title="CREATIVITY"
-          describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
-          id="creativity"
-          isHD={isHD}
-        />
-      </Carousel.Item>
-    </Carousel>
+    <div className="Introduction">
+      <Carousel pause={false}>
+        <Carousel.Item>
+          <Item
+            background={img1}
+            title="ABOUT US"
+            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            image={logo}
+            id="about-us"
+            isHD={isHD}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Item
+            background={img2}
+            title="ATTRIBUTE"
+            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            id="attribute"
+            isHD={isHD}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Item
+            background={img3}
+            title="CREATIVITY"
+            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            id="creativity"
+            isHD={isHD}
+          />
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 };
 

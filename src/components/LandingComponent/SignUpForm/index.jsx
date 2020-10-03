@@ -6,7 +6,7 @@ import img from "../../../assets/5_PopUpForm/placeholderImage.png";
 import next from "../../../assets/5_PopUpForm/HMCWeb_NextB.png";
 import prev from "../../../assets/5_PopUpForm/HMCWeb_PrevB.png";
 import send from "../../../assets/5_PopUpForm/HMCWeb_SendB.png";
-import ToggleButton from "../../../elements/GradeButton";
+import GradeButton from "../../../elements/GradeButton";
 import PositionButton from "../../../elements/PositionButton";
 import { Alert } from "../../Bootstrap";
 import "./styles.scss";
@@ -96,7 +96,6 @@ class SignUpForm extends React.Component {
     Exp: "",
     Confide: "",
     KT: " ",
-    DS: " ",
     TT: " ",
     DN: " ",
     PhoneNumber: "",
@@ -129,7 +128,7 @@ class SignUpForm extends React.Component {
   };
 
   componentDidUpdate() {
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleInfo = (info) => {
@@ -152,7 +151,6 @@ class SignUpForm extends React.Component {
   };
 
   onSubmit = (event) => {
-    console.log(this.props);
     event.preventDefault();
     const finalInfo = this.handleInfo(this.info);
     if (
@@ -162,7 +160,6 @@ class SignUpForm extends React.Component {
       finalInfo.Email === "" ||
       finalInfo.position === ""
     ) {
-      console.log("hey");
       this.setState({ isValidate: false });
     } else {
       this.props.signUp(this.handleInfo(this.info));
@@ -202,12 +199,14 @@ class SignUpForm extends React.Component {
           type={input.type}
           onChange={this.onChange}
           required={input.required}
+          value={this.info[input.name]}
         />
       ))}
       <div className="GroupButton">
-        <ToggleButton
+        <GradeButton
           handleRadioSelect={this.handleRadioSelect}
           onChange={this.onChange}
+          value={this.info.Grade}
         />
         <div className="NextButton" onClick={this.toggleSecondForm}>
           <img src={next} alt="nextButton" />
@@ -230,6 +229,7 @@ class SignUpForm extends React.Component {
             name="KT"
             text="Ban kỹ thuật"
             clear={this.state.clear}
+            selectValue={this.info.KT}
           />
           <PositionButton
             positions={MediaPositions}
@@ -237,6 +237,7 @@ class SignUpForm extends React.Component {
             name="TT"
             text="Ban truyền thông"
             clear={this.state.clear}
+            selectValue={this.info.TT}
           />
           <PositionButton
             positions={ForeignAffairPositions}
@@ -244,6 +245,7 @@ class SignUpForm extends React.Component {
             name="DN"
             text="Ban đối ngoại"
             clear={this.state.clear}
+            selectValue={this.info.DN}
           />
         </div>
       </div>
@@ -253,6 +255,7 @@ class SignUpForm extends React.Component {
         placeholder="(Ví dụ: Đường dẫn sản phẩm mà bạn đã từng thực hiện)"
         type="text"
         onChange={this.onChange}
+        value={this.info.Exp}
       />
       <Input
         label="8. Bạn có tâm sự gì với HMC không?"
@@ -260,6 +263,7 @@ class SignUpForm extends React.Component {
         placeholder="(Nhập câu trả lời ở đây)"
         type="textarea"
         onChange={this.onChange}
+        value={this.info.Confide}
       />
       <div className="ControlButtons">
         <div className="Button" onClick={this.toggleSecondForm}>
@@ -290,6 +294,7 @@ class SignUpForm extends React.Component {
   );
 
   render() {
+    console.log(this.info);
     return (
       <div className="FormContainer" style={this.props.style}>
         <div className="Form">
@@ -321,7 +326,6 @@ class SignUpForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { signUpSuccess: state.signUp.success };
 };
 

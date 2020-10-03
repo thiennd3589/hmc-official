@@ -1,0 +1,23 @@
+.MobileProjects {
+  background: url("../../../assets/Background/HMCWeb_BG_Red.jpg");
+  padding: 20px;
+
+  .Section {
+    padding: 0 20px;
+    color: #fff;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 7px;
+      background-color: #fff;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin: 0;
+    }
+  }
+}
