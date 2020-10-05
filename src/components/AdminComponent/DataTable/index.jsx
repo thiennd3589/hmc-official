@@ -9,18 +9,82 @@ import {
   foreignAffairGroup,
 } from "../../../redux/Database/selector";
 import { Button, Popover, OverlayTrigger } from "../../Bootstrap";
-import TableCell from "../TableCell";
+import Table from "../Table";
 import "./styles.scss";
 
+const DATA_TYPE = {
+  ALL: "ALL",
+  TECHNICAL: "TECHNICAL",
+  MEDIA: "MEDIA",
+  FOREIGNAFFAIR: "FOREIGNAFFAIR",
+};
+
 class DataTable extends React.Component {
+  data;
+  columnDef;
   constructor(props) {
     super(props);
     this.state = {
       url: "",
       exportData: [],
       user: null,
+      data: DATA_TYPE.ALL,
     };
+
+    this.data = this.props.database ? this.props.database : [];
+    this.columnDef = [];
   }
+
+  shouldComponentUpdate(nextProps) {
+    console.log(nextProps);
+    if (nextProps !== this.props) {
+      if (this.state.data !== DATA_TYPE.ALL) {
+        return true;
+      } else {
+        this.data = nextProps.database;
+        console.log(this.data);
+        this.initColumnDef();
+      }
+    }
+    return true;
+  }
+
+  initColumnDef = () => {
+    this.columnDef = [
+      {
+        Header: "Name",
+        accessor: "Name",
+      },
+      {
+        Header: "Birthday",
+        accessor: "Birthday",
+      },
+      {
+        Header: "Grade",
+        accessor: "Grade",
+      },
+      {
+        Header: "Email",
+        accessor: "Email",
+      },
+      {
+        Header: "PhoneNumber",
+        accessor: "PhoneNumber",
+      },
+      {
+        Header: "Position",
+        accessor: "position",
+      },
+      {
+        Header: "Exp",
+        accessor: "Exp",
+      },
+      {
+        Header: "Confide",
+        accessor: "Confide",
+      },
+    ];
+  };
 
   convertJsonToXlsx = (data) => {
     try {
@@ -55,28 +119,41 @@ class DataTable extends React.Component {
   };
 
   render() {
-    const options = (
+    const filter = (
       <Popover id="popover-basic">
         <Popover.Content
-          onClick={this.convertJsonToXlsx.bind(this, this.props.database)}
+          onClick={() => {
+            this.data = this.props.database;
+            this.initColumnDef();
+            this.setState({ data: DATA_TYPE.ALL });
+          }}
         >
           All
         </Popover.Content>
         <Popover.Content
-          onClick={this.convertJsonToXlsx.bind(this, this.props.technicalGroup)}
+          onClick={() => {
+            this.data = this.props.technicalGroup;
+            this.initColumnDef();
+            this.setState({ data: DATA_TYPE.TECHNICAL });
+          }}
         >
           Ban Kỹ Thuật
         </Popover.Content>
         <Popover.Content
-          onClick={this.convertJsonToXlsx.bind(this, this.props.mediaGroup)}
+          onClick={() => {
+            this.data = this.props.mediaGroup;
+            this.initColumnDef();
+            this.setState({ data: DATA_TYPE.TECHNICAL });
+          }}
         >
           Ban Truyền Thông
         </Popover.Content>
         <Popover.Content
-          onClick={this.convertJsonToXlsx.bind(
-            this,
-            this.props.foreignAffairGroup
-          )}
+          onClick={() => {
+            this.data = this.props.foreignAffairGroup;
+            this.initColumnDef();
+            this.setState({ data: DATA_TYPE.TECHNICAL });
+          }}
         >
           Ban Đối Ngoại
         </Popover.Content>
@@ -85,24 +162,74 @@ class DataTable extends React.Component {
 
     return (
       <div className="DataTable">
-        <div className="Table">
-          <TableCell label="Tổng đơn" value={this.props.database.length} />
-          <TableCell
-            label="Ban kỹ thuật"
-            value={this.props.technicalGroup.length}
-          />
-          <TableCell
-            label="Ban truyền thông"
-            value={this.props.mediaGroup.length}
-          />
-          <TableCell
-            label="Ban đối ngoại"
-            value={this.props.foreignAffairGroup.length}
-          />
-          <div className="Download">
-            <OverlayTrigger trigger="focus" placement="right" overlay={options}>
-              <Button className="export">Export</Button>
+        <div className="Data">
+          <div className="Overview">
+            <OverlayTrigger trigger="focus" placement="right" overlay={filter}>
+              <Button className="export">Bộ lọc</Button>
             </OverlayTrigger>
+            <div className="Detail">
+              <Button
+                className="export"
+                onClick={() => {
+                  this.data = this.props.database;
+                  this.initColumnDef();
+                  this.setState({ data: DATA_TYPE.ALL });
+                }}
+              >
+                <label htmlFor="">{"Tổng đơn: "}</label>
+                <span>{this.props.database && this.props.database.length}</span>
+              </Button>
+              <Button
+                className="export"
+                onClick={() => {
+                  this.data = this.props.technicalGroup;
+                  this.initColumnDef();
+                  this.setState({ data: DATA_TYPE.TECHNICAL });
+                }}
+              >
+                <label htmlFor="">{"Ban kỹ thuật: "} </label>
+                <span>
+                  {this.props.technicalGroup &&
+                    this.props.technicalGroup.length}
+                </span>
+              </Button>
+              <Button
+                className="export"
+                onClick={() => {
+                  this.data = this.props.mediaGroup;
+                  this.initColumnDef();
+                  this.setState({ data: DATA_TYPE.TECHNICAL });
+                }}
+              >
+                <label htmlFor="">{"Ban truyền thông: "}</label>
+                <span>
+                  {this.props.mediaGroup && this.props.mediaGroup.length}
+                </span>
+              </Button>
+              <Button
+                className="export"
+                onClick={() => {
+                  this.data = this.props.foreignAffairGroup;
+                  this.initColumnDef();
+                  this.setState({ data: DATA_TYPE.TECHNICAL });
+                }}
+              >
+                <label htmlFor="">{"Ban đối ngoại: "}</label>
+                <span>
+                  {this.props.foreignAffairGroup &&
+                    this.props.foreignAffairGroup.length}
+                </span>
+              </Button>
+            </div>
+          </div>
+          <Table columns={this.columnDef} data={this.data} />
+          <div className="Download">
+              <Button
+                className="export"
+                onClick={this.convertJsonToXlsx.bind(this, this.data)}
+              >
+                Export
+              </Button>
             {this.state.url ? (
               <Button className="download">
                 <a href={this.state.url} download="database.xlsx">
