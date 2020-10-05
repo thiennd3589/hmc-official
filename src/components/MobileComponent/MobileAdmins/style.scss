@@ -1,0 +1,33 @@
+.AdminContainer {
+    position: relative;
+    background: url("../../../assets//Background/HMCWeb_M_BG_W.jpg");
+    max-height: fit-content;
+    .Sessions {
+        position: relative;
+        top: 25px;
+        text-align: left;
+        color: #c32b37;
+        padding: 0 20px;
+        margin: 10px;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 7px;
+            background-color: #c32b37;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 35px;
+        }
+    }
+    .Admins {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        top: 10px;
+        margin: 10px;
+        border-bottom-right-radius: 40px;
+    }
+}
