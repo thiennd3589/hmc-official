@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from "../../../assets/Mobile/4.Administrators/HMCWeb_M_Ads_00.png";
-import img2 from "../../../assets/Mobile/4.Administrators/HMCWeb_M_Ads_01.png";
-import img3 from "../../../assets/Mobile/4.Administrators/HMCWeb_M_Ads_02.png";
+import img1 from "../../../assets/4_Administrators/HMCWeb_M_Ads_00.jpg";
+import img2 from "../../../assets/4_Administrators/HMCWeb_M_Ads_01.jpg";
+import img3 from "../../../assets/4_Administrators/HMCWeb_M_Ads_02.jpg";
 import "./style.scss";
 import MobileAdminsCard from "./MobileAdminsCard";
 

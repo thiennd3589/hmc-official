@@ -1,8 +1,8 @@
 import React from "react";
 import Divider from "../Divider";
-import img1 from "../../../assets/4_Administrators/img1.jpg";
-import img2 from "../../../assets/4_Administrators/img2.jpg";
-import img3 from "../../../assets/4_Administrators/img3.jpg";
+import img1 from "../../../assets/4_Administrators/HMCWeb_M_Ads_00.jpg";
+import img2 from "../../../assets/4_Administrators/HMCWeb_M_Ads_01.jpg";
+import img3 from "../../../assets/4_Administrators/HMCWeb_M_Ads_02.jpg";
 import "./styles.scss";
 import AdminCard from "./AdminCard";
 
