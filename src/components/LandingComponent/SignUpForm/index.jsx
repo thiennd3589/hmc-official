@@ -20,17 +20,17 @@ const inputs = [
     required: true,
   },
   {
-    label: "2. Ngày tháng năm sinh?*",
-    name: "Birthday",
-    placeholder: "(Ngày sinh)",
-    type: "date",
-    required: true,
-  },
-  {
-    label: "3. Số điện thoại liên lạc?*",
+    label: "2. Số điện thoại liên lạc?*",
     name: "PhoneNumber",
     placeholder: "(Số điện thoại)",
     type: "tel",
+    required: true,
+  },
+  {
+    label: "3. Link facebook của bạn?*",
+    name: "Facebook",
+    placeholder: "Link facebook",
+    type: "text",
     required: true,
   },
   {
@@ -90,7 +90,7 @@ const ForeignAffairPositions = [
 class SignUpForm extends React.Component {
   info = {
     Name: "",
-    Birthday: "",
+    Facebook: "",
     Grade: "",
     Email: "",
     Exp: "",
@@ -127,15 +127,11 @@ class SignUpForm extends React.Component {
     }
   };
 
-  componentDidUpdate() {
-    // console.log(this.state);
-  }
-
   handleInfo = (info) => {
     const position = `${info.KT} ${info.TT} ${info.DN}`;
     const finalInfo = {
       Name: info.Name.trim(),
-      Birthday: info.Birthday.trim(),
+      Facebook: info.Facebook.trim(),
       Grade: info.Grade.trim(),
       Email: info.Email.trim(),
       PhoneNumber: info.PhoneNumber.trim(),
