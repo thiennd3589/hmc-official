@@ -54,34 +54,70 @@ class DataTable extends React.Component {
       {
         Header: "Name",
         accessor: "Name",
+        Cell: ({ value }) => {
+          return <span style={{ minWidth: "500px" }}>{value}</span>;
+        },
       },
       {
-        Header: "Birthday",
-        accessor: "Birthday",
+        Header: "Facebook",
+        accessor: "Facebook",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "Grade",
         accessor: "Grade",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "Email",
         accessor: "Email",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "PhoneNumber",
         accessor: "PhoneNumber",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "Position",
         accessor: "position",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "Exp",
         accessor: "Exp",
+        Cell: ({ value }) => {
+          return <span>{value}</span>;
+        },
       },
       {
         Header: "Confide",
         accessor: "Confide",
+        Cell: ({ value }) => {
+          return (
+            <OverlayTrigger
+              trigger={["click", "hover"]}
+              placement="left"
+              overlay={
+                <Popover id="popover-basic" placement="top">
+                  <Popover.Content>{value}</Popover.Content>
+                </Popover>
+              }
+            >
+              <span className="Ellipsis">{value}</span>
+            </OverlayTrigger>
+          );
+        },
       },
     ];
   };
@@ -224,12 +260,12 @@ class DataTable extends React.Component {
           </div>
           <Table columns={this.columnDef} data={this.data} />
           <div className="Download">
-              <Button
-                className="export"
-                onClick={this.convertJsonToXlsx.bind(this, this.data)}
-              >
-                Export
-              </Button>
+            <Button
+              className="export"
+              onClick={this.convertJsonToXlsx.bind(this, this.data)}
+            >
+              Export
+            </Button>
             {this.state.url ? (
               <Button className="download">
                 <a href={this.state.url} download="database.xlsx">

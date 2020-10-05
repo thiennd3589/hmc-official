@@ -10,7 +10,7 @@ const Input = ({ label, name, placeholder, type, onChange, value }) => {
   const [, redraw] = useState();
 
   const onCurrentInputChange = (event) => {
-    ref.current.value = event.currentTarget.value.trim();
+    ref.current.value = event.currentTarget.value;
     redraw({});
   };
 

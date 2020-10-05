@@ -25,12 +25,12 @@ const CarouselComp = () => {
 
   return (
     <div className="Introduction">
-      <Carousel pause={false}>
+      <Carousel >
         <Carousel.Item>
           <Item
             background={img1}
             title="ABOUT US"
-            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            describe="Câu lạc bộ truyền thông trường Đại học Bách Khoa Hà Nội - HUST Media Club được thành lập vào tháng 11 năm 2018. Câu lạc bộ không ngừng phấn đấu và cải thiện để trở thành tổ chức uy tín, một kênh thông tin hữu ích và có sức ảnh hưởng cao trong trường và khu vực Bách Kinh Xây. "
             image={logo}
             id="about-us"
             isHD={isHD}
@@ -40,7 +40,7 @@ const CarouselComp = () => {
           <Item
             background={img2}
             title="ATTRIBUTE"
-            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            describe="Ở HMC, chúng tôi không ngừng phát triển và cải thiện các kĩ năng của bản thân để tạo ra các sản phẩm có chất lượng tốt hơn từng ngày. Với tính chuyên môn cao và sự sáng tạo, chúng tôi mong muốn các sản phẩm của mình không những đẹp về thẩm mĩ mà còn mang ý nghĩa sâu sắc đằng sau mỗi ấn phẩm chuyên nghiệp"
             id="attribute"
             isHD={isHD}
           />
@@ -49,7 +49,7 @@ const CarouselComp = () => {
           <Item
             background={img3}
             title="CREATIVITY"
-            describe="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere deleniti quam ab ipsa, rem assumenda nobis itaque ipsam architecto ad eaque officia voluptas fugit animi cupiditate sapiente? Rem, veritatis est?"
+            describe="Sự sáng tạo không thể thiếu với một người làm truyền thông. Chúng tôi đề cao sự nhạy bén, nhanh nhạy trong quan sát và linh hoạt hành động, xử lý tình huống khéo léo. Một người làm truyền thông luôn nhảy số trong đầu với những ý tưởng đột phá nhưng vẫn phải giữ cho mình một cái đầu lạnh và một phong thái điềm tĩnh "
             id="creativity"
             isHD={isHD}
           />

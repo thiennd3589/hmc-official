@@ -29,7 +29,7 @@ const inputs = [
   {
     label: "3. Link facebook của bạn?*",
     name: "Facebook",
-    placeholder: "Link facebook",
+    placeholder: "(Link facebook)",
     type: "text",
     required: true,
   },
@@ -151,17 +151,18 @@ class SignUpForm extends React.Component {
     const finalInfo = this.handleInfo(this.info);
     if (
       finalInfo.Name === "" ||
-      finalInfo.Birthday === "" ||
+      finalInfo.Facebook === "" ||
       finalInfo.Grade === "" ||
       finalInfo.Email === "" ||
-      finalInfo.position === ""
+      finalInfo.position === "" ||
+      finalInfo.PhoneNumber === ""
     ) {
       this.setState({ isValidate: false });
     } else {
       this.props.signUp(this.handleInfo(this.info));
       this.info = {
         Name: "",
-        Birthday: "",
+        Facebook: "",
         Grade: "",
         Email: "",
         Exp: "",

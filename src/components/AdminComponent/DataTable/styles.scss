@@ -5,6 +5,7 @@
   align-items: center;
   height: auto;
   width: 100%;
+  padding: 20px;
 
   .Data {
     .Overview {
@@ -102,4 +103,12 @@
       background-color: rgb(218, 218, 218);
     }
   }
+}
+
+.Ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  max-width: 100px;
 }
