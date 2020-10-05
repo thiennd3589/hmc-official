@@ -1,0 +1,52 @@
+.MobileAdminCard {
+    background: url("../../../../assets//Background/HMCWeb_M_BG_R.jpg");
+    border-radius: 0px;
+    border-bottom-right-radius: 40px ;
+    margin: 20px;
+    padding :5px;
+    max-height: 30%;
+    box-shadow: 0 0 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    .CardContent {
+        display: flex;
+        flex-direction: row;
+        margin:5px;
+        border-radius: 0px;
+        .avatar {
+            max-width: 40%;
+            img {
+                width: 100%;
+                height: auto;
+                border-bottom-right-radius: 20%;
+            }
+        }
+        .info {
+            max-width: 40%;
+            color:#fff;
+            // position: relative;
+            // left: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-left: 10px;
+            p{
+                color:#fff;
+                margin-bottom: 0;
+            }
+            .main{
+                margin: 0;
+                .pos {
+                    font-style: italic;
+                    font-size: 3vw;
+                }
+                .name {
+                    font-size: 6vw;
+                    font-weight: bold;
+                }
+            }
+            .text {
+                font-size: 4vw ;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
