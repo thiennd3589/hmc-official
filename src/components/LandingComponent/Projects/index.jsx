@@ -22,18 +22,26 @@ const Projects = () => {
     {
       name: "GRADUATION CEREMONY",
       image: img1,
+      link:
+        "https://www.facebook.com/media/set/?vanity=hustmediaclub&set=a.612139035934852",
     },
     {
-      name: "CHÀO TÂN K64",
+      name: "CHÀO TÂN 2019",
       image: img2,
+      link:
+        "https://www.facebook.com/media/set/?vanity=hustmediaclub&set=a.696317104183711",
     },
     {
       name: "BÁCH KHOA MỘT CHUYỆN TÌNH",
       image: img3,
+      link:
+        "https://www.facebook.com/media/set/?vanity=hustmediaclub&set=a.706021426546612",
     },
     {
       name: "THANH XUÂN, TỚ VÀ CẬU",
       image: img4,
+      link:
+        "https://www.facebook.com/media/set/?vanity=hustmediaclub&set=a.701498993665522",
     },
   ];
 
@@ -96,6 +104,7 @@ const Projects = () => {
             key={project.name}
             name={project.name}
             image={project.image}
+            link={project.link}
           />
         ))}
       </div>

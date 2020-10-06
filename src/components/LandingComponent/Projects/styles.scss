@@ -29,7 +29,6 @@
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    cursor: grab;
 
     button {
       width: 50px;
@@ -63,11 +62,6 @@
       }
     }
   }
-}
-
-.active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
 }
 
 ::-webkit-scrollbar {
