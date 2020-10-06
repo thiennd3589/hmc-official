@@ -7,11 +7,22 @@ export default () => {
   let button;
   let menu;
   let menuBar;
+  let img;
   useEffect(() => {
     button = document.querySelector(".ToggleButton");
     menu = document.querySelector(".MobileMenu");
     menuBar = document.querySelector(".MenuBar");
+    img = document.querySelector(".MenuButton");
   });
+
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      if (event.target === img) {
+        return;
+      }
+      hideMenu();
+    });
+  }, []);
 
   const showMenu = () => {
     button.classList.add("ShowMenu");
@@ -20,6 +31,7 @@ export default () => {
   };
 
   const hideMenu = () => {
+    console.log("hide");
     button.classList.remove("ShowMenu");
     menu.classList.remove("ShowMenu");
     menuBar.classList.remove("ShowMenu");
@@ -29,7 +41,7 @@ export default () => {
     <div className="MenuBar">
       <div className="MenuContainer">
         <div className="ToggleButton" onClick={showMenu}>
-          <img src={MenuButton} alt="menu" />
+          <img src={MenuButton} alt="menu" className="MenuButton" />
         </div>
         <div className="MobileMenu">
           <div className="Content">

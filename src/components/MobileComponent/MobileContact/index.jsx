@@ -3,7 +3,7 @@ import "./styles.scss";
 
 export default () => {
   return (
-    <div className="MobileContact">
+    <div className="MobileContact" id="contacts">
       <div className="Section">
         <h3>CONTACTS</h3>
       </div>

@@ -1,4 +1,23 @@
 .Admin {
+  > button {
+    margin: 5px 20px;
+    background: #fff;
+    color: #000 !important;
+    border: none;
+    float: right;
+    border: none !important;
+
+    &:focus,
+    &:active {
+      outline: none !important;
+      background-color: #fff !important;
+    }
+
+    &:hover {
+      background: #fff !important;
+      color: #c42f3b !important;
+    }
+  }
   background-color: #c42f3b;
   height: 100%;
   width: 100%;

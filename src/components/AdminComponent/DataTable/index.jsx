@@ -62,7 +62,11 @@ class DataTable extends React.Component {
         Header: "Facebook",
         accessor: "Facebook",
         Cell: ({ value }) => {
-          return <span>{value}</span>;
+          return (
+            <a href={value} target="_blank">
+              <span>{value}</span>
+            </a>
+          );
         },
       },
       {
@@ -212,8 +216,9 @@ class DataTable extends React.Component {
                   this.setState({ data: DATA_TYPE.ALL });
                 }}
               >
-                <label htmlFor="">{"Tổng đơn: "}</label>
-                <span>{this.props.database && this.props.database.length}</span>
+                <span>{`Tổng đơn: ${
+                  this.props.database && this.props.database.length
+                }`}</span>
               </Button>
               <Button
                 className="export"
@@ -223,10 +228,11 @@ class DataTable extends React.Component {
                   this.setState({ data: DATA_TYPE.TECHNICAL });
                 }}
               >
-                <label htmlFor="">{"Ban kỹ thuật: "} </label>
                 <span>
-                  {this.props.technicalGroup &&
-                    this.props.technicalGroup.length}
+                  {`Ban kỹ thuật: ${
+                    this.props.technicalGroup &&
+                    this.props.technicalGroup.length
+                  }`}
                 </span>
               </Button>
               <Button
@@ -237,10 +243,9 @@ class DataTable extends React.Component {
                   this.setState({ data: DATA_TYPE.TECHNICAL });
                 }}
               >
-                <label htmlFor="">{"Ban truyền thông: "}</label>
-                <span>
-                  {this.props.mediaGroup && this.props.mediaGroup.length}
-                </span>
+                <span>{`Ban truyền thông: ${
+                  this.props.mediaGroup && this.props.mediaGroup.length
+                }`}</span>
               </Button>
               <Button
                 className="export"
@@ -250,11 +255,10 @@ class DataTable extends React.Component {
                   this.setState({ data: DATA_TYPE.TECHNICAL });
                 }}
               >
-                <label htmlFor="">{"Ban đối ngoại: "}</label>
-                <span>
-                  {this.props.foreignAffairGroup &&
-                    this.props.foreignAffairGroup.length}
-                </span>
+                <span htmlFor="">{`Ban đối ngoại: ${
+                  this.props.foreignAffairGroup &&
+                  this.props.foreignAffairGroup.length
+                }`}</span>
               </Button>
             </div>
           </div>

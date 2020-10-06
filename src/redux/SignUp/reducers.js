@@ -1,15 +1,15 @@
 import { SIGN_UP_SUCCESS, SIGN_UP_FAILURE } from './actions';
 
 const INITIAL_STATE = {
-    success: null,
-    error: ''
+    user: null,
+    error: null
 }
 
 const SignUp = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SIGN_UP_SUCCESS: return {
             ...state,
-            success: true
+            user: action.payload
         }
         case SIGN_UP_FAILURE: return {
             ...state,

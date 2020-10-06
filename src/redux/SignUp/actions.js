@@ -7,8 +7,9 @@ export const signUp = (info) => ({
     payload: info
 });
 
-export const signUpSuccess = () => ({
-    type: SIGN_UP_SUCCESS
+export const signUpSuccess = (user) => ({
+    type: SIGN_UP_SUCCESS,
+    payload: user
 });
 
 export const signUpFailure = (error) => ({

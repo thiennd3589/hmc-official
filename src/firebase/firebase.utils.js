@@ -15,3 +15,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const database = firestore();
+
+
+
+

@@ -1,5 +1,5 @@
 import { takeLatest, all, call, put } from 'redux-saga/effects';
-import { database } from '../../firebase/firebase.utils';
+import firebase from 'firebase/app'
 import { SIGN_UP, signUpSuccess, signUpFailure } from './actions';
 
 function* signUpStart() {
@@ -8,9 +8,9 @@ function* signUpStart() {
 
 function* signUp({ payload }) {
     try {
-        const response = yield database.collection('HumanResources').doc().set(payload);
-        yield console.log(response)
-        yield put(signUpSuccess());
+        console.log(payload)
+        const user = yield firebase.auth().signInWithEmailAndPassword(payload.email, payload.password);
+        yield put(signUpSuccess(user))
     } catch (error) {
         yield put(signUpFailure(error));
     }
