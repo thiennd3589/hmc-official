@@ -31,7 +31,6 @@ export default () => {
   };
 
   const hideMenu = () => {
-    console.log("hide");
     button.classList.remove("ShowMenu");
     menu.classList.remove("ShowMenu");
     menuBar.classList.remove("ShowMenu");

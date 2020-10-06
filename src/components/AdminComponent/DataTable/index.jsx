@@ -36,13 +36,11 @@ class DataTable extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    console.log(nextProps);
     if (nextProps !== this.props) {
       if (this.state.data !== DATA_TYPE.ALL) {
         return true;
       } else {
         this.data = nextProps.database;
-        console.log(this.data);
         this.initColumnDef();
       }
     }
@@ -63,7 +61,7 @@ class DataTable extends React.Component {
         accessor: "Facebook",
         Cell: ({ value }) => {
           return (
-            <a href={value} target="_blank">
+            <a href={value} target="_blank" rel="noopener noreferrer">
               <span>{value}</span>
             </a>
           );

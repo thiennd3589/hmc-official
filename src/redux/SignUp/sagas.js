@@ -8,7 +8,6 @@ function* signUpStart() {
 
 function* signUp({ payload }) {
     try {
-        console.log(payload)
         const user = yield firebase.auth().signInWithEmailAndPassword(payload.email, payload.password);
         yield put(signUpSuccess(user))
     } catch (error) {

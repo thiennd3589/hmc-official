@@ -12,7 +12,6 @@ export default () => {
   };
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(ref.current);
     dispatch(signUp(ref.current));
   };
 

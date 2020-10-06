@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getDeviceType, DEVICE_TYPE } from './utils'
 import Admin from './pages/Admin';
@@ -6,9 +6,9 @@ import Landing from './pages/Landing'
 import MobileLanding from './pages/MobileLanding';
 import LoginComponent from './components/LoginComponent';
 import firebase from 'firebase/app'
-import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpSuccess } from './redux/SignUp/actions';
+import './App.css';
 
 function App() {
   const deviceType = getDeviceType();

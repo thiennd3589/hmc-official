@@ -291,7 +291,6 @@ class SignUpForm extends React.Component {
   );
 
   render() {
-    console.log(this.info);
     return (
       <div className="FormContainer" style={this.props.style}>
         <div className="Form">

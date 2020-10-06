@@ -10,10 +10,8 @@ const PositionButton = ({
   clear,
   selectValue,
 }) => {
-  console.log(selectValue);
   const [visiblePositions, setVisiblePositions] = useState(false);
   const refValue = handleSelectValue();
-  console.log(refValue);
   const ref = useRef({
     selectNumber: refValue.positionNumber,
     selectPostion: refValue.position,
@@ -21,16 +19,13 @@ const PositionButton = ({
 
   useEffect(() => {
     if (clear) {
-      console.log("alo");
       resetValue();
       setVisiblePositions(false);
     }
   }, [clear]);
 
   function handleSelectValue() {
-    console.log(selectValue, "fsafsa");
     if (selectValue.length > 1) {
-      console.log("dnn");
       const selectArray = selectValue.split(" ");
       let selectPostion = {
         positionNumber: selectArray.length,
@@ -54,7 +49,6 @@ const PositionButton = ({
   };
 
   const select = (event, name, value) => {
-    console.log(value);
     event.stopPropagation();
     if (event.currentTarget.classList.contains("selected")) {
       event.currentTarget.classList.remove("selected");
@@ -78,8 +72,6 @@ const PositionButton = ({
   const hidePositions = () => {
     visiblePositions && setVisiblePositions(false);
   };
-
-  console.log(ref.current, clear);
 
   return (
     <div className="PositionButton">
