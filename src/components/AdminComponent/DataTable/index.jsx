@@ -99,7 +99,11 @@ class DataTable extends React.Component {
         Header: "Exp",
         accessor: "Exp",
         Cell: ({ value }) => {
-          return <span>{value}</span>;
+          return (
+            <a href={value} target="_blank" rel="noopener noreferrer">
+              <span>{value}</span>
+            </a>
+          );
         },
       },
       {

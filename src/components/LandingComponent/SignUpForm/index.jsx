@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Input from "../../../elements/Input";
-import { signUp } from "../../../redux/SignUp/actions";
+import { register } from "../../../redux/Form/actions";
 import img from "../../../assets/5_PopUpForm/placeholderImage.png";
 import next from "../../../assets/5_PopUpForm/HMCWeb_NextB.png";
 import prev from "../../../assets/5_PopUpForm/HMCWeb_PrevB.png";
@@ -107,6 +107,7 @@ class SignUpForm extends React.Component {
       isFirstForm: true,
       clear: false,
       isValidate: true,
+      alert: false,
     };
 
     this.positionButton1 = React.createRef();
@@ -157,9 +158,9 @@ class SignUpForm extends React.Component {
       finalInfo.position === "" ||
       finalInfo.PhoneNumber === ""
     ) {
-      this.setState({ isValidate: false });
+      this.setState({ isValidate: false, alert: true });
     } else {
-      this.props.signUp(this.handleInfo(this.info));
+      this.props.register(this.handleInfo(this.info));
       this.info = {
         Name: "",
         Facebook: "",
@@ -173,7 +174,11 @@ class SignUpForm extends React.Component {
         DN: " ",
         PhoneNumber: "",
       };
-      this.setState({ clear: !this.state.clear, isValidate: true });
+      this.setState({
+        clear: !this.state.clear,
+        isValidate: true,
+        alert: true,
+      });
     }
   };
 
@@ -183,6 +188,10 @@ class SignUpForm extends React.Component {
 
   toggleSecondForm = () => {
     this.setState({ isFirstForm: !this.state.isFirstForm });
+  };
+
+  onClose = () => {
+    this.setState({ clear: !this.state.clear, isValidate: true });
   };
 
   renderFirstForm = () => (
@@ -275,13 +284,13 @@ class SignUpForm extends React.Component {
           Hình như bạn chưa chọn gì đó!!! Kiểm tra lại nào
         </Alert>
       )}
-      {this.props.signUpSuccess === true && (
+      {this.props.registerSuccess === true && this.state.alert && (
         <Alert variant="success">
           Thành công rồi!!! Bọn mình sẽ gửi kết quả trong thời gian sớm nhất.
           Cảm ơn bạn nhiều.
         </Alert>
       )}
-      {this.props.signUpSuccess === false && (
+      {this.props.registerSuccess === false && this.state.alert && (
         <Alert variant="success">
           Hình như có lỗi gì đó. Hãy báo lại với bọn mình qua fanpage nhé. Cảm
           ơn bạn nhiều
@@ -322,7 +331,7 @@ class SignUpForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { signUpSuccess: state.signUp.success };
+  return { registerSuccess: state.register.success };
 };
 
-export default connect(mapStateToProps, { signUp })(SignUpForm);
+export default connect(mapStateToProps, { register })(SignUpForm);

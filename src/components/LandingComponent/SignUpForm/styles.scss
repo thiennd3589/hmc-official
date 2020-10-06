@@ -85,6 +85,11 @@
           }
         }
 
+        .alert{
+          position: absolute !important;
+          bottom: -35px !important;
+        }
+
         .GroupButton {
           display: flex;
           justify-content: space-between;

@@ -31,7 +31,6 @@ const CheckBoxes = ({
                 onChange={onChange}
                 onKeyPress={(event) => {
                   handleEnter(event);
-                  changePlaceholder("Khác");
                 }}
                 tabIndex={0}
               />

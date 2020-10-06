@@ -16,6 +16,7 @@ const PositionButton = ({
     selectNumber: refValue.positionNumber,
     selectPostion: refValue.position,
   });
+  const detectClickRef = useRef();
 
   useEffect(() => {
     if (clear) {
@@ -23,6 +24,17 @@ const PositionButton = ({
       setVisiblePositions(false);
     }
   }, [clear]);
+
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      if (
+        detectClickRef.current == null &&
+        event.target.classList.contains("Text") !== true
+      ) {
+        hidePositions();
+      }
+    });
+  });
 
   function handleSelectValue() {
     if (selectValue.length > 1) {
@@ -77,22 +89,24 @@ const PositionButton = ({
     <div className="PositionButton">
       {!visiblePositions && (
         <div className="ButtonContent" onClick={showPositions}>
-          <i className="fas fa-play"></i>
-          <span>{text}</span>
+          <i className="fas fa-play Text"></i>
+          <span ref={detectClickRef} className="Text">
+            {text}
+          </span>
         </div>
       )}
       {visiblePositions && (
         <div className="Positions">
           {positions.map((position, index) => (
             <div
-              className={`Position ${
+              className={`Position Text ${
                 ref.current.selectPostion[position.value] && "selected"
               }`}
               key={index}
               onClick={(event) => select(event, name, position.value)}
             >
-              <i className="fas fa-play"></i>
-              <span>{position.label}</span>
+              <i className="fas fa-play Text"></i>
+              <span className="Text">{position.label}</span>
             </div>
           ))}
           <div className="Position" onClick={hidePositions}>
